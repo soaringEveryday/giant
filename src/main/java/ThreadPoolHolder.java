@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolHolder {
     private static ThreadPoolHolder sInstance;
     private static final int CORE_SIZE = Runtime.getRuntime().availableProcessors();
-    private final ThreadPoolExecutor mThreadPoolExecutor;
+    private static volatile ThreadPoolExecutor mThreadPoolExecutor;
 
     public static ThreadPoolHolder getInstance() {
         if (sInstance == null) {
